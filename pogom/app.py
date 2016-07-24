@@ -51,15 +51,7 @@ import calendar
  -
  -        return jsonify(d)
  -
- -    def next_loc(self):
- -        lat = request.args.get('lat', type=float)
- -        lon = request.args.get('lon', type=float)
- -        if not (lat and lon):
- -            print('[-] Invalid next location: %s,%s' % (lat, lon))
- -            return 'bad parameters', 400
- -        else:
- -            config['NEXT_LOCATION'] = {'lat': lat, 'lon': lon}
- -            return 'ok'
+ -   
  -
  -    def list_pokemon(self):
  -        # todo: check if client is android/iOS/Desktop for geolink, currently only supports android
