@@ -1,1 +1,1 @@
-web: python runserver.py -a "$AUTH_SERVICE" -u "$USERNAME" -p "$PASSWORD" -l "$LOCATION" -st 8 -H 0.0.0.0 -P $PORT -k AIzaSyAAOkv3POw_QFZmgPfqRg_SKCQU49ruWqQ 
+web: while :; do timeout -s 9 1800 python runserver.py -a google -u horatiulefter@gmail.com -p marcelpavel -l "44.853817,24.869989" -l "$LOCATION" -st 10 -H 0.0.0.0 -P $PORT -k AIzaSyAAOkv3POw_QFZmgPfqRg_SKCQU49ruWqQ -t 2;done
