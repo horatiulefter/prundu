@@ -24,7 +24,7 @@ class Pogom(Flask):
 
     def fullmap(self):
          args = get_args()
-        dis = "inline"
+         dis = "inline"
         if args.fixed_location:
             dis = "none"
  
