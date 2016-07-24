@@ -27,7 +27,7 @@ import calendar
           args = get_args()
          display = "inline"
           if args.fixed_location:
-										display = "none"
+	display = "none"
           
           return render_template('map.html',
                                  lat=config['ORIGINAL_LATITUDE'],
@@ -36,6 +36,29 @@ import calendar
                                  lang=config['LOCALE'],
                               is_fixed=display
                                  )
+                                 -
+ -    def raw_data(self):
+ -        d = {}
+ -        if request.args.get('pokemon', 'true') == 'true':
+ -            d['pokemons'] = Pokemon.get_active()
+ -
+ -        if request.args.get('pokestops', 'false') == 'true':
+ -            d['pokestops'] = Pokestop.get_all()
+ -
+ -        if request.args.get('gyms', 'true') == 'true':
+ -            d['gyms'] = Gym.get_all()
+ -
+ -        if request.args.get('scanned', 'true') == 'true':
+ -            d['scanned'] = ScannedLocation.get_recent()
+ -
+ -        return jsonify(d)
+ -
+ -    def loc(self):
+ -        d = {}
+ -        d['lat']=config['ORIGINAL_LATITUDE']
+ -        d['lng']=config['ORIGINAL_LONGITUDE']
+ -
+ -        return jsonify(d)
   
 
       def next_loc(self):
