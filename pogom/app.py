@@ -27,8 +27,7 @@ import calendar
           args = get_args()
          display = "inline"
           if args.fixed_location:
-
-             display = "none"
+										display = "none"
           
           return render_template('map.html',
                                  lat=config['ORIGINAL_LATITUDE'],
@@ -38,10 +37,7 @@ import calendar
                               is_fixed=display
                                  )
   
-      def raw_data(self):
- @@ -67,6 +67,9 @@ def loc(self):
-          return jsonify(d)
-  
+
       def next_loc(self):
         args = get_args()
         if args.fixed_location:
